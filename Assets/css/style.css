@@ -1,0 +1,25 @@
+
+
+
+.jumbotron{
+    background: saddlebrown;
+    text-align: center;
+    width: 820px;
+    margin-left: 176px;
+    height: 205px;
+}
+
+.card-body{
+    margin-top: -36px;
+}
+
+.card-header {
+    background: #007bff;;
+}
+
+.row {
+    width: 845px;
+    margin-left: 164px;
+}
+
+    
