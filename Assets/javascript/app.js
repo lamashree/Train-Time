@@ -23,17 +23,18 @@ $(document).ready(function () {
         var name = $("#name-input").val().trim();
         var destination = $("#set-destination").val().trim();
         var FirstTimeTrain = moment($("#Train-time").val().trim(), "HH:mm-military time");
-        var TrainFrequency = $("#Train-frequency").val().trim();
+        var frequencyInMinutes = $("#Train-frequency").val().trim();
 
         // creating local object to hold Train data///
         var newTrain = {
             name: name,
             destination: destination,
             TrainTime: FirstTimeTrain,
-            frequency: TrainFrequency
+            frequency: frequencyInMinutes
         };
         // alerting the user they adding new data for Train//
         alert("YOU Added your Train Schedule");
+        
         console.log(newTrain);
 
         //uploading Train Time to the database.//
@@ -57,22 +58,23 @@ $(document).ready(function () {
         var name = childSnapshot.val().name;
         var destination = childSnapshot.val().destination;
         var TrainTime = childSnapshot.val().TrainTime;
-        var Frequency = childSnapshot.val().frequency;
+        var frequency = childSnapshot.val().frequency;
 
         // Employee Info
         console.log(name);
         console.log(destination);
         console.log(TrainTime);
-        console.log(Frequency);
+        console.log(frequency);
 
         // var Trainstart= moment.unix(FirstTimeTrain).format("HH;mm");
         // console.log(Trainstart + "this is working");
         var firsttimemoment= moment(TrainTime, "HH:mm");
+        //
         console.log(firsttimemoment);
         var currentTime= moment();
         console.log(currentTime);
         var minuteArrival= currentTime.diff(firsttimemoment, "minutes");
-        var minuteLast= minuteArrival % Frequency;
+        var minuteLast= minuteArrival % frequency;
         var awayTrain =frequency - minuteLast;
         console.log("minutes:" + minuteArrival);
         console.log("Mimutes last:" + minuteLast);
@@ -85,7 +87,7 @@ $(document).ready(function () {
             $("<td>").text(name),
             $("<td>").text(destination),
             $("<td>").text(TrainTime),
-            $("<td>").text(Frequency),
+            $("<td>").text(frequency),
             $("<td>").text(awayTrain),
           );
           $("#Train-table").append(newRow);

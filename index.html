@@ -12,8 +12,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-√
-    <link src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="Assets/javascript/app.js"></script>
 
@@ -58,15 +58,15 @@
                 </div>
                 <div class="form-group">
                     <label for="Destinationinput">Destination</label>
-                    <input type="test" class="form-control" id="set-destination">
+                    <input type="text" class="form-control" id="set-destination">
                 </div>
                 <div class="form-group">
                     <label for="timeinput">First Train Time(HH:mm-military time)</label>
-                    <input type="text" class="form-control" id="Train-time">
+                    <input type="number" class="form-control" id="Train-time">
                 </div>
                 <div class="form-group">
                     <label for="frequencyinput">Frequency (min)</label>
-                    <input type="text" class="form-control" id="Train-frequency">
+                    <input type="number" class="form-control" id="Train-frequency">
                 </div>
                 <button type="submit" class="btn btn-primary" id= "submitbutton">Submit</button>
             </form>
