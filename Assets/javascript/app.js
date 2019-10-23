@@ -34,7 +34,7 @@ $(document).ready(function () {
         };
         // alerting the user they adding new data for Train//
         alert("YOU Added your Train Schedule");
-        
+
         console.log(newTrain);
 
         //uploading Train Time to the database.//
@@ -60,19 +60,23 @@ $(document).ready(function () {
         var TrainTime = childSnapshot.val().TrainTime;
         var frequency = childSnapshot.val().frequency;
 
-        // Employee Info
+        // console log my variable
         console.log(name);
         console.log(destination);
         console.log(TrainTime);
         console.log(frequency);
 
-        // var Trainstart= moment.unix(FirstTimeTrain).format("HH;mm");
-        // console.log(Trainstart + "this is working");
+        //varible for first Train time
         var firsttimemoment= moment(TrainTime, "HH:mm");
-        //
+
+        //console log for first Time Train
         console.log(firsttimemoment);
+     // variable that hold the current time
         var currentTime= moment();
+        //console.log current time
         console.log(currentTime);
+
+
         var minuteArrival= currentTime.diff(firsttimemoment, "minutes");
         var minuteLast= minuteArrival % frequency;
         var awayTrain =frequency - minuteLast;
