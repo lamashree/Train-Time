@@ -22,7 +22,8 @@ $(document).ready(function () {
         //graping the input from users and contain in the varible//
         var name = $("#name-input").val().trim();
         var destination = $("#set-destination").val().trim();
-        var FirstTimeTrain = moment($("#Train-time").val().trim(), "HH:mm-military time");
+        var FirstTimeTrain = $("#Train-time").val().trim();
+        console.log(FirstTimeTrain)
         var frequencyInMinutes = $("#Train-frequency").val().trim();
 
         // creating local object to hold Train data///
