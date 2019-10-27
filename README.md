@@ -4,7 +4,7 @@ The user can use this application to retrive Trian time. This aplication has fea
 user can input data, based on the data they submmit the apps will do math for Munites away for the train time.
 
 ## Link:
-Link for the Train-time. The following navgate to the application.
+Link for the Train-time. The following link navgate to the application.
 [Click here]( https://lamashree.github.io/Train-Time/).
 
 ## Area to improve:

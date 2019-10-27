@@ -68,34 +68,36 @@ $(document).ready(function () {
         console.log(frequency);
 
         //varible for first Train time
-        var firsttimemoment= moment(TrainTime, "HH:mm");
+        var firsttimemoment = moment(TrainTime, "HH:mm");
 
         //console log for first Time Train
         console.log(firsttimemoment);
-     // variable that hold the current time
-        var currentTime= moment();
+        // variable that hold the current time
+        var currentTime = moment();
         //console.log current time
         console.log(currentTime);
 
-
-        var minuteArrival= currentTime.diff(firsttimemoment, "minutes");
-        var minuteLast= minuteArrival % frequency;
-        var awayTrain =frequency - minuteLast;
+        // doing math to get Train time//
+        var minuteArrival = currentTime.diff(firsttimemoment, "minutes");
+        var minuteLast = minuteArrival % frequency;
+        var awayTrain = frequency - minuteLast;
         console.log("minutes:" + minuteArrival);
         console.log("Mimutes last:" + minuteLast);
         console.log("Away Train:" + awayTrain);
 
+        //creating global variable that reference to the current time and Train away//
         var nextArrival = currentTime.add(awayTrain, 'minutes');
         var arrivaltime = nextArrival.format("HH:mm");
 
+        //Dynamically adding table and append to the HTML DOM.//
         var newRow = $("<tr>").append(
             $("<td>").text(name),
             $("<td>").text(destination),
             $("<td>").text(TrainTime),
             $("<td>").text(frequency),
             $("<td>").text(awayTrain),
-          );
-          $("#Train-table").append(newRow);
+        );
+        $("#Train-table").append(newRow);
     });
 
 });
